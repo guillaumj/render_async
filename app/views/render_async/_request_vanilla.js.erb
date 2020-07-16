@@ -50,6 +50,8 @@
       if (request.readyState === 4) {
         if (request.status >= SUCCESS && request.status < ERROR) {
           var container = document.getElementById('<%= container_id %>');
+          if (!container) return;
+
           <% if interval %>
           container.innerHTML = request.response;
           <% else %>

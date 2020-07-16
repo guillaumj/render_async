@@ -43,6 +43,8 @@ if (window.jQuery) {
         headers: headers
       }).done(function(response) {
         var container = $("#<%= container_id %>");
+        if (!container) return;
+
         <% if interval %>
           container.empty();
           container.append(response);
